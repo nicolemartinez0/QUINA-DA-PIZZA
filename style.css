@@ -1,0 +1,107 @@
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+    }
+
+    /* Fundo da página (celulares e telas pequenas) */
+    body {
+      background-image: url(imagens/fundo\ tel.jpeg);
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /*Fundo para telas maiores (notebook/desktop)*/
+    @media (min-width: 768px) {
+        body {
+            background: url(imagens/fundo\ pc.jpeg);
+            background-size: cover;
+        }
+    }
+
+    /* Animação da caixa */
+    @keyframes slideUpFade {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Caixa central */
+    .container {
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 40px 25px;
+      border-radius: 15px;
+      text-align: center;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      animation: slideUpFade 0.8s ease forwards;
+    }
+
+    /* Logo */
+    .logo {
+      max-width: 160px;
+      margin-bottom: 25px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    /* Links */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .links a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(90deg, #000000, #0a0a0a);
+      padding: 14px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    }
+
+    /* Responsividade
+    @media (min-width: 600px) {
+      .links {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .links a {
+        flex: 1;
+        margin: 0 5px;
+      }
+    }*/
